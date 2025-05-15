@@ -60,7 +60,7 @@ function App() {
             <h2 className='text-xl mt-7 font-bold mb-2'>Your Aggregate Score:</h2>
             <p className='text-3xl font-semibold text-[#C39D36]'>{result}</p>
             <p className='my-3'>Join The Class '29 aspirants group for more informtion and updates on addmission news...</p>
-            <button className='px-8 py-3 bg-[#b6890c] text-white rounded-full my-5'>a
+            <button className='px-8 py-3 bg-[#b6890c] text-white rounded-full my-5'>
               <a href="https://chat.whatsapp.com/FSHbOdaysuU3itdZhbKBPK">Join Group</a>
             </button>
           </div>
