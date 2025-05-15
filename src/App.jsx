@@ -50,29 +50,33 @@ function App() {
     <div className='relative min-h-screen p-5 bg-[#080809] flex flex-col justify-center items-center'>
       {showModal && (
         <div className='fixed inset-0 flex justify-center items-center bg-black/40 backdrop-blur-sm z-20'>
-          <div className='bg-white/10 border border-white/20 p-6 rounded-2xl shadow-lg backdrop-blur-md text-white text-center'>
-            <h2 className='text-xl font-bold mb-4'>🎉 Your Aggregate Score</h2>
-            <p className='text-3xl font-semibold text-[#C39D36]'>{result}</p>
+          <div className='bg-white/10 border w-96 border-white/20 p-3 rounded-2xl shadow-lg backdrop-blur-md text-white text-center'>
             <button
               onClick={() => setShowModal(false)}
-              className='mt-5 bg-gradient-to-b from-[#C39D36] to-[#82640F] px-6 py-2 rounded-full font-semibold'
+              className='bg-white/30 px-3 py-1 flex float-right rounded-full font-semibold'
             >
-              Close
+              X
+            </button>
+            <h2 className='text-xl mt-7 font-bold mb-2'>Your Aggregate Score:</h2>
+            <p className='text-3xl font-semibold text-[#C39D36]'>{result}</p>
+            <p className='my-3'>Join The Class '29 aspirants group for more informtion and updates on addmission news...</p>
+            <button className='px-8 py-3 bg-[#b6890c] text-white rounded-full my-5'>a
+              <a href="https://chat.whatsapp.com/FSHbOdaysuU3itdZhbKBPK">Join Group</a>
             </button>
           </div>
         </div>
       )}
 
-      <div className={`relative z-10 h-[95vh] w-[80vw] mx-auto rounded-3xl border-2 border-white/10 bg-gradient-to-b from-[#ffffff0e] to-[#57575710]`}>
-        <h3 className='text-lg md:text-3xl md:my-10 my-5 text-center text-white font-semibold'>
-          Enter your details to calculate your{' '}
-          <span className='text-transparent bg-gradient-to-b from-[#fff] to-[#B6890C] bg-clip-text'>aggregate</span>
+      <div className={`relative z-10 md:w-[55vw] mx-auto rounded-3xl border-2 border-white/10 bg-gradient-to-b from-[#ffffff0e] to-[#57575710]`}>
+        <h3 className='text-lg md:text-3xl md:my-10 my-5 text-center text-white font-bold'>
+          Enter your details to <br /> calculate your{' '}
+          <span className='text-transparent bg-gradient-to-b from-[#ffe59c]  to-[#B6890C] bg-clip-text'>aggregate</span>
         </h3>
 
-        <form className='px-3 md:grid md:px-24 md:my-28' onSubmit={calculateAggregate}>
-          <div className='md:grid md:gap-5 grid-cols-2 md:pb-10 pb-5 flex flex-col space-y-[10px] md:space-y-0'>
+        <form className='px-3 md:grid md:px-16 md:my-16' onSubmit={calculateAggregate}>
+          <div className='md:grid md:gap-8 grid-cols-2 md:pb-10 pb-5 flex flex-col space-y-[10px] md:space-y-0'>
             {['Maths', 'English', 'Physics', 'Biology', 'Chemistry'].map(subject => (
-              <div key={subject} className='w-full bg-white/10 p-2 rounded-lg border-2 border-white/15 text-white'>
+              <div key={subject} className='w-full bg-white/5 p-3 rounded-lg border-[1.5px] border-white/15 text-white'>
                 <select
                   className='bg-transparent outline-none w-full'
                   value={scores[subject]}
@@ -86,11 +90,10 @@ function App() {
               </div>
             ))}
 
-            <div className='w-full bg-white/10 p-2 rounded-lg border-2 border-white/15 text-white'>
+            <div className='w-full bg-white/10 p-3 rounded-lg border-2 border-white/15 text-white'>
               <input
                 type="number"
                 placeholder='UTME Score'
-                min={0}
                 max={400}
                 className='w-full bg-transparent outline-none'
                 value={scores.UTME}
@@ -107,8 +110,8 @@ function App() {
           </button>
         </form>
       </div>
-      <h3 className='text-white text-center mt-5 ml-5'>Powered by:</h3>
-      <div className='font-medium flex justify-center items-center text-white text-lg'><img src="img.png" className='h-20' alt="" /> The <strong className='mx-1'>Elites</strong></div>
+      <h3 className='text-white text-center mt-5'>Powered by:</h3>
+      <div className='font-medium flex justify-center items-center mt-2 text-white text-lg flex-col'><img src="img.png" className='h-10' alt="" /> <p><strong>Emperor</strong> and The<strong className='mx-[5px]'>Elites</strong></p> <p className='font-bold'>07045875707</p></div>
     </div>
   );
 }
